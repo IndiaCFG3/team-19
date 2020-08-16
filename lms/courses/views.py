@@ -15,7 +15,7 @@ def getmycourses(request,errorfromcreate=None):
         courseids.append(student['course_id'])
     student_course_details = Course.objects.filter(
         course_id__in=courseids).values()
-    return render(request,'courses/mycourses.html',{'V':student_course_details})
+    return render(request,'courses/mycourses.html',{'V':student_course_details,'num':[0,0,0]})
 
 def register(request,course_id):
     s = Student()
