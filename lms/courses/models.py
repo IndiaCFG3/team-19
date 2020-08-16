@@ -8,10 +8,6 @@ class Course(models.Model):
     course_title = models.CharField(max_length=50)
     course_image = models.ImageField(
         upload_to='images/', default='lms/media/images/img03098-p1c4ja9s6v131m1ilh1bq8661273.jpg')
-    # subcourse1_comp = models.IntegerField(default=0)
-    # subcourse2_comp = models.IntegerField(default=0)
-    # subcourse3_comp = models.IntegerField(default=0)
-    # subcourse4_comp = models.IntegerField(default=0)
     
 class SubCourse(models.Model):
     course_id = models.IntegerField()
@@ -23,6 +19,7 @@ class SubCourse(models.Model):
     transcript = models.FileField(upload_to='trans/')
     # quiz_marks = models.IntegerField()
     mandatory = models.BooleanField()
+    quiz = models.CharField(max_length=400)
 
 class Score(models.Model):
     course_id = models.IntegerField()
