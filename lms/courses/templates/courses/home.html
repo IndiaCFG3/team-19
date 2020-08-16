@@ -1,0 +1,10 @@
+ALL COURSES
+{% for course in t %}
+<a href="{% url 'detail' course_id=course.course_id%}">{{course.course_id}}</a>
+{{course.course_title}}
+{% endfor %}
+
+<a href="{% url 'mycourses' %}">Show my courses</a>
+
+
+<a href="{% url 'createcourse' %}">Create a course</a>

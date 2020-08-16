@@ -1,0 +1,126 @@
+<form method="POST" action="{% url 'createcourse' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    Id:
+    <br />
+    <input type="text" name="id" />
+    <br />
+    Title :
+    <br />
+    <input type="text" name="title" />
+    <br />
+    Sub Course No:
+    <br />
+    <input type="text" name="sub_course_no1" />
+    <br />
+    Video1:
+    <br />
+    <input type="file" name="video1.1" />
+    <br />
+    Video2:
+    <br />
+    <input type="file" name="video1.2" />
+    <br />
+    Video3:
+    <br />
+    <input type="file" name="video1.3" />
+    <br />
+    Video4:
+    <br />
+    <input type="file" name="video1.4" />
+    <br />
+    Transcript:
+    <br />
+    <input type="file" name="transcript1" />
+    <br />
+    Mandatory:
+    <br />
+    <input type="text" name="mandatory1" />
+    <br />
+    Sub Course No:
+    <br />
+    <input type="text" name="sub_course_no2" />
+    <br />
+    Video1:
+    <br />
+    <input type="file" name="video2.1" />
+    <br />
+    Video2:
+    <br />
+    <input type="file" name="video2.2" />
+    <br />
+    Video3:
+    <br />
+    <input type="file" name="video2.3" />
+    <br />
+    Video4:
+    <br />
+    <input type="file" name="video2.4" />
+    <br />
+    Transcript:
+    <br />
+    <input type="file" name="transcript2" />
+    <br />
+    Mandatory:
+    <br />
+    <input type="text" name="mandatory2" />
+    <br />
+    Sub Course No:
+    <br />
+    <input type="text" name="sub_course_no3" />
+    <br />
+    Video1:
+    <br />
+    <input type="file" name="video3.1" />
+    <br />
+    Video2:
+    <br />
+    <input type="file" name="video3.2" />
+    <br />
+    Video3:
+    <br />
+    <input type="file" name="video3.3" />
+    <br />
+    Video4:
+    <br />
+    <input type="file" name="video3.4" />
+    <br />
+    Transcript:
+    <br />
+    <input type="file" name="transcript3" />
+    <br />
+    Mandatory:
+    <br />
+    <input type="text" name="mandatory3" />
+    <br />
+    Sub Course No:
+    <br />
+    <input type="text" name="sub_course_no4" />
+    <br />
+    Video1:
+    <br />
+    <input type="file" name="video4.1" />
+    <br />
+    Video2:
+    <br />
+    <input type="file" name="video4.2" />
+    <br />
+    Video3:
+    <br />
+    <input type="file" name="video4.3" />
+    <br />
+    Video4:
+    <br />
+    <input type="file" name="video4.4" />
+    <br />
+    Transcript:
+    <br />
+    <input type="file" name="transcript4" />
+    <br />
+    Mandatory:
+    <br />
+    <input type="text" name="mandatory4" />
+    <br />
+    <br />
+    <br />
+    <input class=" btn btn-primary" type="submit" value="Create course" />
+</form>

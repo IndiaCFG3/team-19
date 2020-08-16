@@ -1,0 +1,7 @@
+<h1>{{course.course_id}}</h1>
+{{course.course_title}}
+
+<form method="POST" action="{% url 'register' course_id=course.course_id%}">
+    {% csrf_token %}
+    <input class=" btn btn-primary" type="submit" value="Register" />
+</form> 
