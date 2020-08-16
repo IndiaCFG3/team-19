@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <title>{{ question.question_title }} - My Q&A</title>
+{#        <link rel="stylesheet" href="{% static 'style.css' %}">#}
+    </head>
+    <body>
+        <a href="{% url 'home' %}">
+            <h1>DISCUSSION FORUM</h1>
+        </a>
+        <div class="content">
+
+            <div class="card">
+                <div class="card-body">
+            <h1>{{ question.question_title }}</h1>
+            <h4>{{ question.question_text|safe }}</h4>
+            <p class="questiondetails">
+                <span>Question Posted on <strong>{{ question.date_posted }}</strong></span>
+                <span>Posted by <strong>{{ question.posted_by }}</strong></span>
+            </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div id="answers">
+                    {% for answer in answers %}
+                            <br>
+                            {{ answer.answer_text|safe }}
+                            <p class="answerdetails">
+{#                                <span>Posted on <strong>{{ answer.date_posted }}</strong></span>#}
+                                <span>Posted by <strong>{{ answer.posted_by }}</strong></span>
+                            </p>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- <form class="reply" action="" method="post"> -->
+                {% csrf_token %}
+                <textarea name="answer" id="answer" rows="8" cols="80" placeholder="What's your answer?"></textarea><p />
+                <input type="text" id="posted_by" name="posted_by" value="" autocomplete="off" placeholder="Enter your name ..."><p />
+                <input type="hidden" id="qid" name="qid" value="{{ question.qid }}">
+                <button name="answer_question" id="answer_question">Answer Question</button>
+            <!-- </form> -->
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/core.js' %}"></script>
+        <script type="text/javascript">
+            var csrftoken = getCookie("csrftoken");
+        </script>
+{#    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>#}
+{#<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>#}
+{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>#}
+    </body>
+</html>
